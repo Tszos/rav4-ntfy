@@ -68,11 +68,15 @@
       "id": "411570",
       "image": "https://panel.pewneauto.pl/media/thumbnails/39/393c6f5249bbaa4da76bf4884f04e101__10294373.jpg",
       "mileage_km": 61454,
-      "price": 181900,
+      "price": 179900,
       "price_history": [
         [
           "2026-11-04",
           181900
+        ],
+        [
+          "2026-11-11",
+          179900
         ]
       ],
       "title": "EXECUTIVE_4X4 2,5 Hybrid 222 KM.Faktura Vat.23%.Salon Polska.",
@@ -101,11 +105,15 @@
       "id": "414507",
       "image": "https://panel.pewneauto.pl/media/thumbnails/a4/a46d25ff3cbd21969d8b63f34cf369c7__10034287.jpg",
       "mileage_km": 33163,
-      "price": 167500,
+      "price": 165500,
       "price_history": [
         [
           "2026-11-04",
           167500
+        ],
+        [
+          "2026-11-11",
+          165500
         ]
       ],
       "title": "Comfort+Style 4X2 2,5 Hybrid 218 KM.Salon Polska.Faktura Vat.23%.",
