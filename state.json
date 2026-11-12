@@ -7,45 +7,6 @@
     "price": 181600
   },
   "offers": {
-    "405620": {
-      "dealer": "Lexus Warszawa Żerań",
-      "details": {
-        "color": "Czarny",
-        "drive": "4x2",
-        "first_registration": "29-01-2024",
-        "flags": [
-          "bezwypadkowy",
-          "1. właściciel",
-          "salon PL",
-          "FV 23%"
-        ],
-        "origin": "Polska",
-        "plate": "WJ5046M",
-        "power": "218 KM",
-        "trim": "Executive",
-        "upholstery": "Skórzana",
-        "vin": "JTMY53FV80D052381"
-      },
-      "first_seen": "2026-11-04T20:39:39+01:00",
-      "fuel": "Hybryda",
-      "id": "405620",
-      "image": "https://panel.pewneauto.pl/media/thumbnails/1e/1e4ac22d75134742581a3ba5f19791d0__10986121.jpg",
-      "mileage_km": 23996,
-      "price": 156900,
-      "price_history": [
-        [
-          "2026-11-04",
-          163900
-        ],
-        [
-          "2026-11-06",
-          156900
-        ]
-      ],
-      "title": "EXECUTIVE 4X2 / FV Marża / Salon PL / Gwarancja / Bezwypadkowy",
-      "url": "https://uzywanegrupacygan.pl/oferta/toyota-rav4/405620",
-      "year": 2023
-    },
     "411570": {
       "dealer": "Toyota Warszawa Marki",
       "details": {
@@ -450,5 +411,15 @@
       "year": 2024
     }
   },
-  "removed": []
+  "removed": [
+    {
+      "dealer": "Lexus Warszawa Żerań",
+      "first_seen": "2026-11-04T20:39:39+01:00",
+      "id": "405620",
+      "price": 156900,
+      "removed_at": "2026-11-12T19:58:50+01:00",
+      "title": "EXECUTIVE 4X2 / FV Marża / Salon PL / Gwarancja / Bezwypadkowy",
+      "year": 2023
+    }
+  ]
 }
