@@ -103,11 +103,15 @@
       "id": "423038",
       "image": "https://panel.pewneauto.pl/media/thumbnails/67/67b4adbdd55ecb6728d35734836a11fb__10519535.jpg",
       "mileage_km": 23487,
-      "price": 168900,
+      "price": 163900,
       "price_history": [
         [
           "2026-11-04",
           168900
+        ],
+        [
+          "2026-11-18",
+          163900
         ]
       ],
       "title": "RAV4 2.5 Hybrid COMFORT + STYLE 4X2 | Faktura VAT 23% | Salon Polska",
