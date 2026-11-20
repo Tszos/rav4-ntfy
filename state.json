@@ -7,43 +7,6 @@
     "price": 181600
   },
   "offers": {
-    "411570": {
-      "dealer": "Toyota Warszawa Marki",
-      "details": {
-        "color": "Czarny",
-        "drive": "4x4",
-        "first_registration": "09-05-2024",
-        "flags": [
-          "salon PL",
-          "FV 23%"
-        ],
-        "origin": "Polska",
-        "plate": "PY96011",
-        "power": "177 KM",
-        "trim": "Executive",
-        "upholstery": "Skórzana",
-        "vin": "JTMD63FV80J049381"
-      },
-      "first_seen": "2026-11-04T19:21:57+00:00",
-      "fuel": "Hybryda",
-      "id": "411570",
-      "image": "https://panel.pewneauto.pl/media/thumbnails/39/393c6f5249bbaa4da76bf4884f04e101__10294373.jpg",
-      "mileage_km": 61454,
-      "price": 179900,
-      "price_history": [
-        [
-          "2026-11-04",
-          181900
-        ],
-        [
-          "2026-11-11",
-          179900
-        ]
-      ],
-      "title": "EXECUTIVE_4X4 2,5 Hybrid 222 KM.Faktura Vat.23%.Salon Polska.",
-      "url": "https://uzywanegrupacygan.pl/oferta/toyota-rav4/411570",
-      "year": 2024
-    },
     "414507": {
       "dealer": "Toyota Warszawa Marki",
       "details": {
@@ -376,6 +339,15 @@
       "removed_at": "2026-11-18T15:00:20+01:00",
       "title": "COMFORT+STYLE 4X4 2,5 Hybrid 222 KM.Faktura Vat23%.Salon Polska.",
       "year": 2023
+    },
+    {
+      "dealer": "Toyota Warszawa Marki",
+      "first_seen": "2026-11-04T19:21:57+00:00",
+      "id": "411570",
+      "price": 179900,
+      "removed_at": "2026-11-20T22:06:57+01:00",
+      "title": "EXECUTIVE_4X4 2,5 Hybrid 222 KM.Faktura Vat.23%.Salon Polska.",
+      "year": 2024
     }
   ]
 }
