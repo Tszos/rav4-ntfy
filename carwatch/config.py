@@ -46,5 +46,9 @@ SUMMARY_HOUR = 18    # od tej godziny (czas polski) wysyłane jest podsumowanie
 NEW_RAV4_URL = "https://www.toyota.pl/nowe-samochody/rav4"
 NEW_PRICE_THRESHOLD = 175_000  # zł
 
+# --- Błędy ---------------------------------------------------------------
+# Run kończy się błędem (mail z GitHuba) dopiero, gdy to samo sprawdzenie pada tyle razy z rzędu.
+FAIL_AFTER = 3
+
 # --- Pliki ----------------------------------------------------------------
 STATE_FILE = "state.json"

@@ -10,6 +10,7 @@ import requests
 
 from carwatch import config, notify
 from carwatch.details import fetch_details
+from carwatch.net import RetrySession
 from carwatch.market import MarketComparison, compare, fmt_pct
 from carwatch.new_price import fetch_base_price
 from carwatch.used_offers import Offer, fetch_all, fetch_market
@@ -235,19 +236,30 @@ def save_state(path: str, state: dict) -> None:
 
 def main() -> int:
     state = load_state(config.STATE_FILE)
-    errors = 0
-    with requests.Session() as session:
+    failures: dict = state.setdefault("check_failures", {})
+    persistent = []
+    with RetrySession() as session:
         ctx = Context(session)
         for check in (check_used, check_new_price, maybe_send_summary):
+            name = check.__name__
             try:
                 check(ctx, state)
             except Exception as e:  # jedna awaria nie blokuje pozostałych sprawdzeń
-                errors += 1
-                print(f"Błąd w {check.__name__}: {e!r}", file=sys.stderr)
+                failures[name] = failures.get(name, 0) + 1
+                print(f"Błąd w {name} ({failures[name]}. raz z rzędu): {e!r}", file=sys.stderr)
+                if failures[name] >= config.FAIL_AFTER:
+                    persistent.append(name)
+            else:
+                failures.pop(name, None)
+    if not failures:
+        state.pop("check_failures")
     # raz w miesiącu zmiana w pliku -> commit, żeby GitHub nie wyłączył harmonogramu
     state["heartbeat"] = now().strftime("%Y-%m")
     save_state(config.STATE_FILE, state)
-    return 1 if errors else 0
+    # pojedyncze awarie stron to szum; czerwony run dopiero gdy problem się utrzymuje
+    if persistent:
+        print(f"Utrzymujące się błędy: {', '.join(persistent)}", file=sys.stderr)
+    return 1 if persistent else 0
 
 
 if __name__ == "__main__":
