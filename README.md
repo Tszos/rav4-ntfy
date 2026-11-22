@@ -2,9 +2,10 @@
 
 Powiadomienia na telefon o:
 
-1. **nowych ofertach używanych Toyot RAV4** na [uzywanegrupacygan.pl](https://uzywanegrupacygan.pl/)
-   w salonach **Toyota Warszawa Żerań**, **Toyota Warszawa Marki** i **Lexus Warszawa Żerań** – tylko hybrydy,
+1. **nowych ofertach używanych Toyot RAV4** na [pewneauto.pl](https://pewneauto.pl/) w **22 salonach
+   Toyota i Lexus w Warszawie i okolicach** (do ~35 km od centrum) – tylko hybrydy,
    rocznik **od 2023** (dodatkowo: o obniżce ceny już obserwowanej oferty). Powiadomienie zawiera:
+   - **⭐ ŻERAŃ** w tytule i najwyższy priorytet dla ofert z salonu Żerań (znajomy mechanik),
    - wersję i napęd, kolor, tapicerkę, oznaczenia (bezwypadkowy, salon PL, FV 23%),
    - **porównanie z rynkiem** – medianę cen podobnych RAV4 (rocznik, przebieg, napęd) z całej Polski
      w programie Toyota Pewne Auto i różnicę w %,
@@ -35,7 +36,8 @@ Opcjonalnie zamiast/obok ntfy: Telegram – sekrety `TELEGRAM_BOT_TOKEN` i `TELE
 
 ## Zmiana kryteriów
 
-Wszystko w `carwatch/config.py`: salony (`DEALERS`, ID z filtra „Salon” na stronie), minimalny rocznik,
+Wszystko w `carwatch/config.py`: salony (`DEALERS`, „station-id” z pewneauto.pl; ID i współrzędne salonów są w danych strony
+[znajdz-dilera](https://pewneauto.pl/znajdz-dilera)), wyróżnione salony (`FAVORITE_DEALERS`), minimalny rocznik,
 rodzaje napędu (domyślnie hybryda i hybryda plug-in), próg ceny nowego RAV4, powiadomienia o obniżkach,
 dzień i godzina podsumowania tygodnia.
 

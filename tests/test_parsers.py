@@ -11,7 +11,7 @@ def test_parse_listing():
     assert len(offers) == 3
     o = offers[0]
     assert o.id.isdigit()
-    assert o.url.startswith("https://uzywanegrupacygan.pl/oferta/toyota-rav4/")
+    assert o.url.startswith("https://pewneauto.pl/oferta/toyota-rav4/")
     assert o.year and 2000 < o.year < 2100
     assert o.price and o.price > 10_000
     assert o.mileage_km is not None

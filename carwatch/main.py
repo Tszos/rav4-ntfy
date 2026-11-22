@@ -13,10 +13,12 @@ from carwatch.details import fetch_details
 from carwatch.net import RetrySession
 from carwatch.market import MarketComparison, compare, fmt_pct
 from carwatch.new_price import fetch_base_price
-from carwatch.used_offers import Offer, fetch_all, fetch_market
+from carwatch.used_offers import Offer, fetch_all, fetch_market, listing_url
 
 TZ = ZoneInfo(config.TIMEZONE)
 HISTORY_URL = "https://historiapojazdu.gov.pl/"
+# salony obserwowane przed rozszerzeniem na całą Warszawę (stan bez klucza "dealers")
+LEGACY_DEALERS = [186, 188, 13]
 
 
 def now() -> datetime:
@@ -32,7 +34,25 @@ def fmt_km(km: int | None) -> str:
 
 
 def short_dealer(dealer: str) -> str:
-    return dealer.replace("Toyota Warszawa ", "").replace("Lexus Warszawa ", "Lexus ")
+    return (dealer.replace("Toyota Warszawa ", "").replace("Lexus Warszawa ", "Lexus ")
+            .replace("Toyota ", ""))
+
+
+def station_of(o: Offer) -> int | None:
+    """ID salonu; starsze rekordy w state.json mają tylko nazwę salonu."""
+    if o.station_id is not None:
+        return o.station_id
+    return next((i for i, name in config.DEALERS.items() if name == o.dealer), None)
+
+
+def favorite(o: Offer) -> str | None:
+    """Etykieta ulubionego salonu (np. "ŻERAŃ") albo None."""
+    return config.FAVORITE_DEALERS.get(station_of(o))
+
+
+def star(o: Offer) -> str:
+    fav = favorite(o)
+    return f"⭐ {fav} · " if fav else ""
 
 
 class Context:
@@ -70,7 +90,8 @@ def describe(o: Offer, details: dict, cmp: MarketComparison | None) -> str:
     extras += details.get("flags", [])
     if any(extras):
         lines.append(", ".join(x for x in extras if x))
-    lines.append(o.dealer)
+    fav = favorite(o)
+    lines.append(f"⭐ {o.dealer} – ulubiony salon (znajomy mechanik)" if fav else o.dealer)
     if cmp:
         lines.append(f"Rynek: mediana {fmt_price(cmp.median_price)} z {cmp.count} ofert "
                      f"({cmp.basis}) → {fmt_pct(cmp)}")
@@ -95,6 +116,10 @@ def check_used(ctx: Context, state: dict) -> None:
     offers = fetch_all(ctx.session)
     known: dict = state.get("offers", {})
     first_run = "offers" not in state
+    # oferty z nowo dodanych salonów zapisujemy po cichu i wysyłamy jedno zbiorcze powiadomienie
+    watched = set(state.get("dealers", LEGACY_DEALERS if not first_run else []))
+    added_dealers = set(config.DEALERS) - watched
+    seeded: list[Offer] = []
     today = now().date().isoformat()
     stamp = now().isoformat(timespec="seconds")
 
@@ -108,19 +133,23 @@ def check_used(ctx: Context, state: dict) -> None:
         if o.price and (not history or history[-1][1] != o.price):
             history.append([today, o.price])
 
-        if not first_run and prev is None:
+        if not first_run and prev is None and station_of(o) in added_dealers:
+            seeded.append(o)
+        elif not first_run and prev is None:
             cmp = ctx.compare(o, details)
             pct = f" ({fmt_pct(cmp)})" if cmp else ""
-            notify.send(f"Nowy RAV4: {fmt_price(o.price)}{pct}", describe(o, details, cmp),
+            notify.send(f"{star(o)}Nowy RAV4: {fmt_price(o.price)}{pct}", describe(o, details, cmp),
                         url=o.url, image=o.image, priority=5,
+                        tags=["star", "red_car"] if favorite(o) else None,
                         extra_actions=[("Historia pojazdu", HISTORY_URL)] if details.get("vin") else None)
         elif (prev and config.NOTIFY_PRICE_DROPS and o.price and prev.get("price")
               and o.price < prev["price"]):
             cmp = ctx.compare(o, details)
             notify.send(
-                f"Obniżka RAV4: {fmt_price(prev['price'])} → {fmt_price(o.price)}",
+                f"{star(o)}Obniżka RAV4: {fmt_price(prev['price'])} → {fmt_price(o.price)}",
                 describe(o, details, cmp), url=o.url, image=o.image,
-                tags=["chart_with_downwards_trend"],
+                priority=5 if favorite(o) else 4,
+                tags=["star", "chart_with_downwards_trend"] if favorite(o) else ["chart_with_downwards_trend"],
             )
 
         new_records[o.id] = {
@@ -131,10 +160,14 @@ def check_used(ctx: Context, state: dict) -> None:
         }
 
     if first_run:
-        lines = [f"• {o.year} {fmt_price(o.price)} – {short_dealer(o.dealer)}" for o in offers]
         notify.send(f"Obserwuję RAV4 – obecnie {len(offers)} ofert",
-                    "\n".join(lines) or "Brak ofert spełniających kryteria.",
-                    url=config.USED_BASE_URL + config.USED_LISTING_PATH, priority=3)
+                    offer_lines(offers) or "Brak ofert spełniających kryteria.",
+                    url=listing_url(), priority=3)
+    elif added_dealers:
+        notify.send(f"Obserwuję {len(config.DEALERS)} salonów – {len(seeded)} ofert z nowych",
+                    offer_lines(seeded) or "Brak ofert spełniających kryteria w nowych salonach.",
+                    url=listing_url(), priority=3)
+    state["dealers"] = sorted(config.DEALERS)
 
     # oferty, które zniknęły (sprzedane / zdjęte) – do podsumowania tygodniowego
     removed = state.get("removed", [])
@@ -145,6 +178,13 @@ def check_used(ctx: Context, state: dict) -> None:
                             "first_seen": rec.get("first_seen"), "removed_at": stamp})
     state["removed"] = removed[-50:]
     state["offers"] = new_records
+
+
+def offer_lines(offers: list[Offer]) -> str:
+    """Lista ofert, ulubione salony na górze."""
+    ordered = sorted(offers, key=lambda o: (favorite(o) is None, o.price or 0))
+    return "\n".join(f"• {'⭐ ' if favorite(o) else ''}{o.year} {fmt_price(o.price)} – "
+                     f"{short_dealer(o.dealer)}" for o in ordered)
 
 
 def days_listed(rec: dict) -> int | None:
@@ -172,7 +212,7 @@ def build_summary(ctx: Context, state: dict) -> str:
                  str(o.year), fmt_km(o.mileage_km), variant, short_dealer(o.dealer),
                  f"{days} dni" if days is not None else "",
                  f"↓{drops}× od {fmt_price(hist[0][1])}" if drops else ""]
-        lines.append("• " + " · ".join(p for p in parts if p))
+        lines.append("• " + ("⭐ " if favorite(o) else "") + " · ".join(p for p in parts if p))
         lines.append(f"  {o.url}")
 
     since = state.get("last_summary_at", "")
@@ -196,8 +236,7 @@ def maybe_send_summary(ctx: Context, state: dict) -> None:
     if not forced and (not due or state.get("last_summary_week") == week):
         return
     notify.send("RAV4 – podsumowanie tygodnia", build_summary(ctx, state),
-                url=config.USED_BASE_URL + config.USED_LISTING_PATH, priority=3,
-                tags=["clipboard"])
+                url=listing_url(), priority=3, tags=["clipboard"])
     if not forced:
         state["last_summary_week"] = week
     state["last_summary_at"] = t.isoformat(timespec="seconds")

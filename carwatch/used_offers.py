@@ -1,4 +1,4 @@
-"""Pobieranie ofert używanych RAV4 z uzywanegrupacygan.pl."""
+"""Pobieranie ofert używanych RAV4 z pewneauto.pl (salony z config.DEALERS)."""
 
 import re
 from dataclasses import asdict, dataclass
@@ -21,6 +21,7 @@ class Offer:
     price: int | None
     url: str
     image: str | None
+    station_id: int | None = None  # ID salonu (config.DEALERS)
 
     def to_dict(self) -> dict:
         return asdict(self)
@@ -91,14 +92,25 @@ def fetch_listing(session: requests.Session, base_url: str, params: dict, dealer
 
 def fetch_dealer_offers(session: requests.Session, station_id: int, dealer: str) -> list[Offer]:
     params = {"station-id": station_id, "year-from": config.MIN_YEAR}
-    return [o for o in fetch_listing(session, config.USED_BASE_URL, params, dealer) if matches(o)]
+    offers = [o for o in fetch_listing(session, config.USED_BASE_URL, params, dealer) if matches(o)]
+    for o in offers:
+        o.station_id = station_id
+    return offers
 
 
 def fetch_all(session: requests.Session) -> list[Offer]:
-    offers = []
+    offers: dict[str, Offer] = {}
     for station_id, dealer in config.DEALERS.items():
-        offers.extend(fetch_dealer_offers(session, station_id, dealer))
-    return offers
+        for o in fetch_dealer_offers(session, station_id, dealer):
+            offers.setdefault(o.id, o)
+    return list(offers.values())
+
+
+def listing_url() -> str:
+    """Link do listingu RAV4 ze wszystkich obserwowanych salonów."""
+    ids = ",".join(str(i) for i in config.DEALERS)
+    return (f"{config.USED_BASE_URL}{config.USED_LISTING_PATH}"
+            f"?station-id={ids}&year-from={config.MIN_YEAR}")
 
 
 def fetch_market(session: requests.Session) -> list[Offer]:

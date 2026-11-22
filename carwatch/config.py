@@ -10,16 +10,41 @@ HEADERS = {
 
 TIMEZONE = "Europe/Warsaw"
 
-# --- Samochody używane (Grupa Cygan, platforma Toyota Pewne Auto) ---------
-USED_BASE_URL = "https://uzywanegrupacygan.pl"
+# --- Samochody używane (platforma Toyota Pewne Auto, pewneauto.pl) --------
+USED_BASE_URL = "https://pewneauto.pl"
 USED_LISTING_PATH = "/oferty/brand/toyota/model/rav4"
 
-# ID salonów w filtrze "Salon" ("station-id") na stronie
+# Salony Toyota/Lexus w Warszawie i okolicach (do ~35 km od centrum; następny
+# jest Siedlce, 89 km). Klucz = "station-id" z filtra na pewneauto.pl, ID i
+# współrzędne są w danych strony https://pewneauto.pl/znajdz-dilera.
 DEALERS = {
-    186: "Toyota Warszawa Żerań",
-    188: "Toyota Warszawa Marki",
-    13: "Lexus Warszawa Żerań",
+    187: "Toyota Warszawa Czerniakowska",   # 3 km
+    181: "Toyota Warszawa Wola",            # 4 km
+    186: "Toyota Warszawa Żerań",           # 5 km
+    13: "Lexus Warszawa Żerań",             # 5 km
+    184: "Toyota Warszawa Bielany",         # 6 km
+    180: "Toyota Warszawa Okęcie",          # 7 km
+    204: "Toyota Warszawa Włochy",          # 7 km
+    10: "Lexus Warszawa Wola",              # 7 km
+    224: "Toyota Professional Bemowo",      # 8 km
+    387: "Lexus Warszawa Bemowo",           # 8 km
+    391: "Toyota Warszawa Bemowo",          # 9 km
+    388: "Toyota Aleje",                    # 9 km
+    315: "Toyota Wilanów",                  # 9 km
+    188: "Toyota Warszawa Marki",           # 10 km
+    179: "Toyota Warszawa Mościska Izabelin",  # 12 km
+    20: "Lexus Warszawa Radość",            # 12 km
+    189: "Toyota Warszawa Radość",          # 12 km
+    15: "Lexus Warszawa Puławska",          # 14 km
+    183: "Toyota Chodzeń Piaseczno",        # 14 km
+    223: "Toyota Professional Wesoła",      # 16 km
+    229: "Toyota Józefów",                  # 19 km
+    380: "Toyota Mińsk Mazowiecki",         # 35 km
 }
+
+# Ulubione salony: oferty z nich są wyraźnie oznaczone (⭐ w tytule, najwyższy
+# priorytet). Żerań – znajomy mechanik może sprawdzić auto na miejscu.
+FAVORITE_DEALERS = {186: "ŻERAŃ", 13: "ŻERAŃ (Lexus)"}
 
 MIN_YEAR = 2023
 # Rodzaje napędu z karty oferty. Usuń "Hybryda Plug-in", jeśli interesują
