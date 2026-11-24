@@ -1391,6 +1391,39 @@
       "url": "https://pewneauto.pl/oferta/toyota-rav4/442529",
       "year": 2023
     },
+    "443691": {
+      "dealer": "Toyota Warszawa Czerniakowska",
+      "details": {
+        "color": "Czarny",
+        "drive": "4x4",
+        "first_registration": "08-11-2023",
+        "flags": [
+          "salon PL"
+        ],
+        "origin": "Polska",
+        "plate": "WD2314T",
+        "power": "222 KM",
+        "trim": "Comfort+Style",
+        "upholstery": "Materiałowa",
+        "vin": "JTMR63FVX0J034032"
+      },
+      "first_seen": "2026-11-24T01:53:12+01:00",
+      "fuel": "Hybryda",
+      "id": "443691",
+      "image": "https://panel.pewneauto.pl/media/thumbnails/a5/a557d95efb3a5869ce2816fb07c9a183__11129069.jpg",
+      "mileage_km": 44924,
+      "price": 139900,
+      "price_history": [
+        [
+          "2026-11-24",
+          139900
+        ]
+      ],
+      "station_id": 187,
+      "title": "2.5 Hybrid 218KM Comfort |Style 4x4 Gwarancja/ ASO/ FV23%",
+      "url": "https://pewneauto.pl/oferta/toyota-rav4/443691",
+      "year": 2023
+    },
     "444378": {
       "dealer": "Toyota Warszawa Wola",
       "details": {
@@ -1423,6 +1456,74 @@
       "title": "2.5 Plug-In Hybrid GR Sport 4x4+Nawigacja Connected",
       "url": "https://pewneauto.pl/oferta/toyota-rav4/444378",
       "year": 2025
+    },
+    "446288": {
+      "dealer": "Toyota Professional Wesoła",
+      "details": {
+        "color": "Srebrny",
+        "drive": "4x4",
+        "first_registration": "23-05-2024",
+        "flags": [
+          "salon PL"
+        ],
+        "origin": "Polska",
+        "plate": "WY407EJ",
+        "power": "222 KM",
+        "trim": "Comfort+Style",
+        "upholstery": "Materiałowa",
+        "vin": "JTMR63FV40D133492"
+      },
+      "first_seen": "2026-11-24T01:53:12+01:00",
+      "fuel": "Hybryda",
+      "id": "446288",
+      "image": "https://panel.pewneauto.pl/media/thumbnails/5c/5cacb65ecab254090ea4e5953284deda__11111801.jpg",
+      "mileage_km": 56854,
+      "price": 149999,
+      "price_history": [
+        [
+          "2026-11-24",
+          149999
+        ]
+      ],
+      "station_id": 223,
+      "title": "2.5 Hybrid Comfort 4x4+Style",
+      "url": "https://pewneauto.pl/oferta/toyota-rav4/446288",
+      "year": 2024
+    },
+    "446727": {
+      "dealer": "Toyota Warszawa Okęcie",
+      "details": {
+        "color": "Inny kolor",
+        "drive": "4x2",
+        "first_registration": "13-12-2024",
+        "flags": [
+          "bezwypadkowy",
+          "salon PL",
+          "FV 23%"
+        ],
+        "origin": "Polska",
+        "plate": "WW692TX",
+        "power": "218 KM",
+        "trim": "Executive",
+        "upholstery": "-",
+        "vin": "JTMY53FV70J048680"
+      },
+      "first_seen": "2026-11-24T01:53:12+01:00",
+      "fuel": "Hybryda",
+      "id": "446727",
+      "image": "https://panel.pewneauto.pl/media/thumbnails/ba/ba08d50cc668e033247e6ed76585f509__11128912.jpg",
+      "mileage_km": 40557,
+      "price": 169900,
+      "price_history": [
+        [
+          "2026-11-24",
+          169900
+        ]
+      ],
+      "station_id": 180,
+      "title": "TOYOTA RAV4 EXECUTIVE_4X2 2,5 Hybrid Dynamic Force 218 KM 2024 VAT 23%",
+      "url": "https://pewneauto.pl/oferta/toyota-rav4/446727",
+      "year": 2024
     }
   },
   "removed": [
