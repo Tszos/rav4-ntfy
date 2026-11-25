@@ -28,7 +28,7 @@
   "last_summary_week": "2026-W47",
   "new_rav4": {
     "below": false,
-    "price": 181600
+    "price": 183500
   },
   "offers": {
     "318690": {
@@ -1120,74 +1120,6 @@
       "url": "https://pewneauto.pl/oferta/toyota-rav4/434861",
       "year": 2024
     },
-    "435684": {
-      "dealer": "Toyota Warszawa Okęcie",
-      "details": {
-        "color": "Szary",
-        "drive": "4x4",
-        "first_registration": "02-03-2026",
-        "flags": [
-          "bezwypadkowy",
-          "salon PL",
-          "FV 23%"
-        ],
-        "origin": "Polska",
-        "plate": "WE9KF45",
-        "power": "306 KM",
-        "upholstery": "-",
-        "vin": "JTMGBRFV90D287217"
-      },
-      "first_seen": "2026-11-22T22:47:37+01:00",
-      "fuel": "Hybryda Plug-in",
-      "id": "435684",
-      "image": "https://panel.pewneauto.pl/media/thumbnails/10/1081189efa3fa5501c6bf504c3fdcd57__10814451.jpg",
-      "mileage_km": 31811,
-      "price": 181900,
-      "price_history": [
-        [
-          "2026-11-22",
-          181900
-        ]
-      ],
-      "station_id": 180,
-      "title": "2.5 Plug-In Hybrid Dynamic 4x4, Faktura VAT 23%",
-      "url": "https://pewneauto.pl/oferta/toyota-rav4/435684",
-      "year": 2025
-    },
-    "436228": {
-      "dealer": "Toyota Chodzeń Piaseczno",
-      "details": {
-        "color": "Biały",
-        "drive": "4x2",
-        "first_registration": "27-04-2023",
-        "flags": [
-          "salon PL",
-          "FV 23%"
-        ],
-        "origin": "Polska",
-        "plate": "WE8P460",
-        "power": "218 KM",
-        "trim": "Executive",
-        "upholstery": "Skórzana",
-        "vin": "JTMY53FV40D037022"
-      },
-      "first_seen": "2026-11-22T22:47:37+01:00",
-      "fuel": "Hybryda",
-      "id": "436228",
-      "image": "https://panel.pewneauto.pl/media/thumbnails/e1/e1565d66080cd621f542bbbcb7002a09__10883222.jpg",
-      "mileage_km": 58011,
-      "price": 157800,
-      "price_history": [
-        [
-          "2026-11-22",
-          157800
-        ]
-      ],
-      "station_id": 183,
-      "title": "Rezerwacja-2.5 Hybrid Executive 4x2 218 KM Salon PL, ASO, FV23%",
-      "url": "https://pewneauto.pl/oferta/toyota-rav4/436228",
-      "year": 2023
-    },
     "436780": {
       "dealer": "Toyota Warszawa Wola",
       "details": {
@@ -1489,41 +1421,6 @@
       "title": "2.5 Hybrid Comfort 4x4+Style",
       "url": "https://pewneauto.pl/oferta/toyota-rav4/446288",
       "year": 2024
-    },
-    "446727": {
-      "dealer": "Toyota Warszawa Okęcie",
-      "details": {
-        "color": "Inny kolor",
-        "drive": "4x2",
-        "first_registration": "13-12-2024",
-        "flags": [
-          "bezwypadkowy",
-          "salon PL",
-          "FV 23%"
-        ],
-        "origin": "Polska",
-        "plate": "WW692TX",
-        "power": "218 KM",
-        "trim": "Executive",
-        "upholstery": "-",
-        "vin": "JTMY53FV70J048680"
-      },
-      "first_seen": "2026-11-24T01:53:12+01:00",
-      "fuel": "Hybryda",
-      "id": "446727",
-      "image": "https://panel.pewneauto.pl/media/thumbnails/ba/ba08d50cc668e033247e6ed76585f509__11128912.jpg",
-      "mileage_km": 40557,
-      "price": 169900,
-      "price_history": [
-        [
-          "2026-11-24",
-          169900
-        ]
-      ],
-      "station_id": 180,
-      "title": "TOYOTA RAV4 EXECUTIVE_4X2 2,5 Hybrid Dynamic Force 218 KM 2024 VAT 23%",
-      "url": "https://pewneauto.pl/oferta/toyota-rav4/446727",
-      "year": 2024
     }
   },
   "removed": [
@@ -1561,6 +1458,33 @@
       "price": 179900,
       "removed_at": "2026-11-20T22:06:57+01:00",
       "title": "EXECUTIVE_4X4 2,5 Hybrid 222 KM.Faktura Vat.23%.Salon Polska.",
+      "year": 2024
+    },
+    {
+      "dealer": "Toyota Warszawa Okęcie",
+      "first_seen": "2026-11-22T22:47:37+01:00",
+      "id": "435684",
+      "price": 181900,
+      "removed_at": "2026-11-25T15:30:22+01:00",
+      "title": "2.5 Plug-In Hybrid Dynamic 4x4, Faktura VAT 23%",
+      "year": 2025
+    },
+    {
+      "dealer": "Toyota Chodzeń Piaseczno",
+      "first_seen": "2026-11-22T22:47:37+01:00",
+      "id": "436228",
+      "price": 157800,
+      "removed_at": "2026-11-25T15:30:22+01:00",
+      "title": "Rezerwacja-2.5 Hybrid Executive 4x2 218 KM Salon PL, ASO, FV23%",
+      "year": 2023
+    },
+    {
+      "dealer": "Toyota Warszawa Okęcie",
+      "first_seen": "2026-11-24T01:53:12+01:00",
+      "id": "446727",
+      "price": 169900,
+      "removed_at": "2026-11-25T15:30:22+01:00",
+      "title": "TOYOTA RAV4 EXECUTIVE_4X2 2,5 Hybrid Dynamic Force 218 KM 2024 VAT 23%",
       "year": 2024
     }
   ]
