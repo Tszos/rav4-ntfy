@@ -54,11 +54,15 @@
       "id": "318690",
       "image": "https://panel.pewneauto.pl/media/thumbnails/93/939bcae607a529e391a91da8927db5e4__10064993.jpg",
       "mileage_km": 122449,
-      "price": 134900,
+      "price": 132900,
       "price_history": [
         [
           "2026-11-22",
           134900
+        ],
+        [
+          "2026-11-26",
+          132900
         ]
       ],
       "station_id": 180,
@@ -154,11 +158,15 @@
       "id": "391311",
       "image": "https://panel.pewneauto.pl/media/thumbnails/d2/d2cb498a2a90347d092064d7b78d23e8__9145864.jpg",
       "mileage_km": 20046,
-      "price": 204900,
+      "price": 199900,
       "price_history": [
         [
           "2026-11-22",
           204900
+        ],
+        [
+          "2026-11-26",
+          199900
         ]
       ],
       "station_id": 229,
