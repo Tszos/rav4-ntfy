@@ -1021,7 +1021,7 @@
         ]
       ],
       "station_id": 186,
-      "title": "RAV4 COMFORT_4x4 2,5 Hybrid 218 KM | Salon Polska | Faktura VAT 23% |",
+      "title": "COMFORT+STYLE 4x4 2,5 Hybrid 218 KM | Salon Polska | Faktura VAT 23% |",
       "url": "https://pewneauto.pl/oferta/toyota-rav4/430861",
       "year": 2023
     },
@@ -1149,11 +1149,15 @@
       "id": "436780",
       "image": "https://panel.pewneauto.pl/media/thumbnails/07/0759e52e6411a8b556ba2d5968b4daf6__11030010.jpg",
       "mileage_km": 122952,
-      "price": 135900,
+      "price": 133500,
       "price_history": [
         [
           "2026-11-22",
           135900
+        ],
+        [
+          "2026-11-26",
+          133500
         ]
       ],
       "station_id": 181,
