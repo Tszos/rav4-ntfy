@@ -410,44 +410,6 @@
       "url": "https://pewneauto.pl/oferta/toyota-rav4/412093",
       "year": 2025
     },
-    "414507": {
-      "dealer": "Toyota Warszawa Marki",
-      "details": {
-        "color": "Srebrny",
-        "drive": "4x2",
-        "first_registration": "09-07-2025",
-        "flags": [
-          "salon PL",
-          "FV 23%"
-        ],
-        "origin": "Polska",
-        "plate": "WA8195K",
-        "power": "177 KM",
-        "trim": "Comfort+Style",
-        "upholstery": "Materiałowa",
-        "vin": "JTMW53FV60J060942"
-      },
-      "first_seen": "2026-11-04T19:21:57+00:00",
-      "fuel": "Hybryda",
-      "id": "414507",
-      "image": "https://panel.pewneauto.pl/media/thumbnails/a4/a46d25ff3cbd21969d8b63f34cf369c7__10034287.jpg",
-      "mileage_km": 33163,
-      "price": 165500,
-      "price_history": [
-        [
-          "2026-11-04",
-          167500
-        ],
-        [
-          "2026-11-11",
-          165500
-        ]
-      ],
-      "station_id": 188,
-      "title": "Comfort+Style 4X2 2,5 Hybrid 218 KM.Salon Polska.Faktura Vat.23%.",
-      "url": "https://pewneauto.pl/oferta/toyota-rav4/414507",
-      "year": 2025
-    },
     "420245": {
       "dealer": "Toyota Professional Wesoła",
       "details": {
@@ -991,6 +953,40 @@
       "url": "https://pewneauto.pl/oferta/toyota-rav4/430291",
       "year": 2024
     },
+    "430358": {
+      "dealer": "Toyota Warszawa Marki",
+      "details": {
+        "color": "Czarny",
+        "drive": "4x4",
+        "first_registration": "11-09-2023",
+        "flags": [
+          "salon PL",
+          "FV 23%"
+        ],
+        "origin": "Polska",
+        "plate": "DW4WH63",
+        "power": "177 KM",
+        "trim": "Comfort+Style",
+        "upholstery": "Materiałowa",
+        "vin": "JTMR63FV30D093289"
+      },
+      "first_seen": "2026-11-27T20:58:19+01:00",
+      "fuel": "Hybryda",
+      "id": "430358",
+      "image": "https://panel.pewneauto.pl/media/thumbnails/bf/bf5a41d8549c495493e759fb27d4c32c__11175971.jpg",
+      "mileage_km": 108326,
+      "price": 138900,
+      "price_history": [
+        [
+          "2026-11-27",
+          138900
+        ]
+      ],
+      "station_id": 188,
+      "title": "COMFORT+STYLE 4x4 2,5 Hybrid 218 KM.Salon Polska.Faktura Vat.23%.",
+      "url": "https://pewneauto.pl/oferta/toyota-rav4/430358",
+      "year": 2023
+    },
     "430861": {
       "dealer": "Toyota Warszawa Żerań",
       "details": {
@@ -1473,6 +1469,15 @@
       "removed_at": "2026-11-27T11:53:32+01:00",
       "title": "2.5 Hybrid Comfort 4x2",
       "year": 2024
+    },
+    {
+      "dealer": "Toyota Warszawa Marki",
+      "first_seen": "2026-11-04T19:21:57+00:00",
+      "id": "414507",
+      "price": 165500,
+      "removed_at": "2026-11-27T20:58:19+01:00",
+      "title": "Comfort+Style 4X2 2,5 Hybrid 218 KM.Salon Polska.Faktura Vat.23%.",
+      "year": 2025
     }
   ]
 }
