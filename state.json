@@ -1094,40 +1094,6 @@
       "url": "https://pewneauto.pl/oferta/toyota-rav4/431429",
       "year": 2024
     },
-    "434861": {
-      "dealer": "Toyota Warszawa Radość",
-      "details": {
-        "color": "Czarny",
-        "drive": "4x2",
-        "first_registration": "11-04-2024",
-        "flags": [
-          "salon PL",
-          "FV 23%"
-        ],
-        "origin": "Polska",
-        "plate": "WOT4404A",
-        "power": "177 KM",
-        "trim": "Comfort",
-        "upholstery": "-",
-        "vin": "JTMW53FV20J037237"
-      },
-      "first_seen": "2026-11-22T22:47:37+01:00",
-      "fuel": "Hybryda",
-      "id": "434861",
-      "image": "https://panel.pewneauto.pl/media/thumbnails/c9/c9d61abb26cb61421738d4eedf921018__10708979.jpg",
-      "mileage_km": 24456,
-      "price": 149900,
-      "price_history": [
-        [
-          "2026-11-22",
-          149900
-        ]
-      ],
-      "station_id": 189,
-      "title": "2.5 Hybrid Comfort 4x2",
-      "url": "https://pewneauto.pl/oferta/toyota-rav4/434861",
-      "year": 2024
-    },
     "436780": {
       "dealer": "Toyota Warszawa Wola",
       "details": {
@@ -1497,6 +1463,15 @@
       "price": 169900,
       "removed_at": "2026-11-25T15:30:22+01:00",
       "title": "TOYOTA RAV4 EXECUTIVE_4X2 2,5 Hybrid Dynamic Force 218 KM 2024 VAT 23%",
+      "year": 2024
+    },
+    {
+      "dealer": "Toyota Warszawa Radość",
+      "first_seen": "2026-11-22T22:47:37+01:00",
+      "id": "434861",
+      "price": 149900,
+      "removed_at": "2026-11-27T11:53:32+01:00",
+      "title": "2.5 Hybrid Comfort 4x2",
       "year": 2024
     }
   ]
