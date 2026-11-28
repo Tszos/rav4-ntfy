@@ -228,11 +228,15 @@
       "id": "395647",
       "image": "https://panel.pewneauto.pl/media/thumbnails/49/4943a71ad8b917712bb4bc4f4d357be9__10521940.jpg",
       "mileage_km": 154638,
-      "price": 124900,
+      "price": 119900,
       "price_history": [
         [
           "2026-11-22",
           124900
+        ],
+        [
+          "2026-11-28",
+          119900
         ]
       ],
       "station_id": 187,
@@ -712,11 +716,15 @@
       "id": "427896",
       "image": "https://panel.pewneauto.pl/media/thumbnails/84/84c0972a1c027d89c5adccacd670f2c3__10577626.jpg",
       "mileage_km": 40664,
-      "price": 166900,
+      "price": 161900,
       "price_history": [
         [
           "2026-11-04",
           166900
+        ],
+        [
+          "2026-11-28",
+          161900
         ]
       ],
       "station_id": 186,
@@ -848,11 +856,15 @@
       "id": "429751",
       "image": "https://panel.pewneauto.pl/media/thumbnails/5a/5a48ffaced68f0eae02a2e86f62d45f7__10683438.jpg",
       "mileage_km": 112332,
-      "price": 135900,
+      "price": 132900,
       "price_history": [
         [
           "2026-11-22",
           135900
+        ],
+        [
+          "2026-11-28",
+          132900
         ]
       ],
       "station_id": 391,
@@ -916,11 +928,15 @@
       "id": "429846",
       "image": "https://panel.pewneauto.pl/media/thumbnails/36/3649424e335d3294797545d7d53cb91a__10703346.jpg",
       "mileage_km": 161465,
-      "price": 135900,
+      "price": 129900,
       "price_history": [
         [
           "2026-11-22",
           135900
+        ],
+        [
+          "2026-11-28",
+          129900
         ]
       ],
       "station_id": 391,
@@ -1017,11 +1033,15 @@
       "id": "430861",
       "image": "https://panel.pewneauto.pl/media/thumbnails/fe/fe51f7036ee2d19eaa159911db828265__10791138.jpeg",
       "mileage_km": 74343,
-      "price": 147900,
+      "price": 144999,
       "price_history": [
         [
           "2026-11-04",
           147900
+        ],
+        [
+          "2026-11-28",
+          144999
         ]
       ],
       "station_id": 186,
